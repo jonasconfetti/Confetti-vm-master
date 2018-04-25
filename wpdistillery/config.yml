@@ -1,0 +1,101 @@
+# Configuration for WPDistillery executed by setup.sh
+#
+# Author: Flurin Dürst
+# URL: https://wpdistillery.org
+#
+# For detailed instructions on this file read the config.yml-documentation at
+# https://wpdistillery.org/documentation/config-yml-documentation/
+#
+# File Version: 1.8.2
+
+
+# INSTALLATION
+#################################################################
+
+# WordPress version
+wpversion: latest
+
+# language/timezone
+wplocale: sv_SE
+timezone: "Europe/Stockholm"
+
+# admin user settings
+admin:
+  user: confetti
+  password: admin
+  email: dev@confetti.se
+  first_name: ""
+  last_name: ""
+
+# scotch box db access
+db:
+  name: scotchbox
+  user: root
+  pass: root
+  prefix: wp_
+
+# SETTINGS
+#################################################################
+
+wpsettings:
+  url: confettidev.test
+  title: Example Title
+  description: Example Description
+  permalink_structure: "/%postname%/"
+  thumbnail_width: 150
+  thumbnail_height: 150
+  medium_width: 300
+  medium_height: 300
+  large_width: 1024
+  large_height: 1024
+  # use page as frontpage
+  page_on_front: true
+  # define frontpage name (requires `page_on_front: true`)
+  frontpage_name: Hem
+  # automatic conversion of smilies
+  convert_smilies: false
+
+# THEMES
+#################################################################
+
+# install a custom theme via url, rename it and remove default themes
+themes:
+  name: page-builder-framework
+  url: "https://downloads.wordpress.org/theme/page-builder-framework.1.7.4.1.zip"
+  rename: ""
+  remove:
+    - twentyfifteen
+    - twentysixteen
+    - twentyseventeen
+
+
+# PLUGINS
+#################################################################
+
+# plugins to install & activate
+plugins_active:
+  - wordpress-seo
+  - elementor
+  # Elementor Pro
+
+# plugins to install
+plugins_inactive:
+  - advanced-custom-fields
+  - custom-post-type-ui
+  # Gravity Forms
+  # WP Pagebuilder Framework Premium Addon
+
+# WPDISTILLERY SETUP
+####################################################################
+# if you don't want the setup to run all tasks, set them to false
+
+setup:
+  wp: true
+  settings: true
+  themes: true
+  plugins: true
+  cleanup: true
+  # adjust what data you want to be deleted within the cleanup (requires `cleanup: true`)
+  comment: true
+  posts: true
+  files: true
